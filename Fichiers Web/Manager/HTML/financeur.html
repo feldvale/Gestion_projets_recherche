@@ -1,0 +1,34 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Financeurs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+<body>
+	
+	<h1>Ajouter des Financeurs</h1><br>
+	<p><form method="post" action="../PHP/financeur_insertion.php" class="forms">
+		<label><input type="text" name="nom" placeholder="Nom du financeur"/></label>
+		<label><input type="text" name="dateDebut" placeholder="Date de Début"/></label>
+		<label><input type="text" name="dateFin" placeholder="Date de fin"/></label> 
+		<label><input type="text" name="employeContact" placeholder="Nom de l'employe contact"/></label> 
+		<label><input type="text" name="type" placeholder="Type de financeur (E, P, R, V ou O)"/></label> 
+		<input class="btn-blue width-50" type="submit" value="Ajouter"/></br>
+	</form></p>
+	
+	<p><h2>Afficher</h2>
+	<form method="post" action="../PHP/financeur_list.php" class="forms">
+		<label><input type="text" name="filtreNom" placeholder="Nom du financeur"/></label>
+		<label><input type="text" name="filtreDateD" placeholder="Date de Debut"/></label>
+		<label><input type="text" name="filtreDateF" placeholder="Date de fin"/></label>
+		<label><input type="text" name="filtreemployeC" placeholder="Nom de l'employe contact"/></label>
+		<label><input type="text" name="filtretype" placeholder="Type de financeur"/></label>
+		<input class="btn-blue width-50" type="submit" value="Filtrer"/></br>
+	</form></p>
+	
+	<p><a href="AccueilManager.html">Retour</a></p>
+		
+	
+</body>
+</html>

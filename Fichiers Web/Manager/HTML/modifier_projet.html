@@ -1,0 +1,23 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<h1><br>Modifier un projet</br></h1>
+
+	<i>Attention, vous devez renseigner le nom du projet actuel, le nouveau nom du projet ainsi que la nouvelle date de début du projet. </i>
+
+	<p><b>Saisissez le nom et la date de debut du projet actuel : </b></p>
+	<form method="post" action="../PHP/modifier_projets.php">
+		<label>Nom du projet actuel</label>:<input type="text" name="nomActuel"/></br>
+		<label>Date de debut du projet actuel</label>:<input type="text" name="dateDebutActuelle"/></br>
+	<p><b>Saisissez les nouveaux champs : </b></p>
+		<label>Nom du projet nouveau</label>:<input type="text" name="nomNouveau"/></br>
+		<label>Nouvelle date de début</label>:<input type="text" name="dateD"/></br>
+		<label>Nouvelle date de fin</label>:<input type="text" name="dateF"/></br>
+		<label>Nouveau numéro de proposition</label>:<input type="text" name="prop"/></br>
+		<input type="submit" value="Modifier"/></br>
+	</form>
+	
+</body>
+</html>

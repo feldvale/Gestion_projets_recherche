@@ -1,0 +1,59 @@
+﻿<html>
+<head>
+	<title>Appel à projet</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+	<h1>Appels à Projet</h1><br><br>
+	<p><h2>Ajouter</h2>
+	<form method="post" action="project-call-insert.php" class="forms">
+		<label><input type="text" name="theme" placeholder="Thème"/></label>
+		<label><input type="text" name="fin" placeholder="Date de fin"/></label>
+		<label><TEXTAREA name="desc" rows=3 cols=50 placeholder="Description" ></TEXTAREA></label>
+		<input class="btn-blue width-50" type="submit" value="Ajouter"/></br>
+	</form></p>
+	
+	<p><h2>Afficher</h2>
+	<form method="post" action="project-call-list.php" class="forms">
+		<label><input type="text" name="filtreTheme" placeholder="Thème"/></label>
+		<label><input type="text" name="filtreLancement" placeholder="Date de Lancement"/></label>
+		<label><input type="text" name="filtreFin" placeholder="Date de fin"/></label>
+		<input class="btn-blue width-50" type="submit" value="Filtrer"/></br>
+	</form></p>
+	
+	<p><table border="1">
+		<tr>
+			<th width="100pt">Identifiant</th>
+			<th width="100pt">Date de Lancement</th>
+			<th width="100pt">Date de Fin</th>
+			<th width="100pt">Thème</th>
+			<th width="100pt">Description</th>
+		</tr>
+<?php
+	//Connexion à la BDD
+	include "connect.php";	
+	$vConn=fConnect();
+
+	
+	//Recuperation de la table AppelProjet : id, deb, fin, theme, desc
+	$vSql = "SELECT id, dateLancement, dateFin, theme, description	FROM AppelProjet";
+	$vQuery=pg_query($vConn, $vSql);
+	
+	
+	<!-- Affichage des champs de la table
+		while($vResult=pg_fetch_array($vQuery)){
+			echo"<tr>";
+			echo"<td>$vResult[id]</td>";
+			echo"<td>$vResult[dateLancement]</td>";
+			echo"<td>$vResult[dateFin]</td>";
+			echo"<td>$vResult[theme]</td>";
+			echo"<td>$vResult[description]</tr>";
+		}
+	-->
+?>
+	</table></p>
+	<hr/>
+	<a href="index.html">Retour</a>
+</body>
+</html>

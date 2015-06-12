@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kube Web Framework</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/kube.min.css" />
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="js/kube.min.js"></script>
+
+</head>
+
+<body>
+	<div class="units-row">
+		<h1> Recherche des projets</h1>
+		<table border="1px", class="table-hovered">
+    	<form method="post" action="../PHP/project-list-manager.php" class="forms">
+    		<label>
+        		<input type="text" name="project_name" placeholder="Nom de projet" class="width-50" />
+    		</label>
+    		<label>
+        		<input type="text" name="proposition" placeholder="Proposition" class="width-50" />
+    		</label>
+    		 <label>
+       			 	<li>Date debut du projet</li>
+			        <ul class="forms-inline-list">
+			            <li>
+			                <select name="begin_day" >
+			                	<option selected="selected">--<option>
+			                	<option>01</option>
+			                	<option>02</option>
+			                	<option>03</option>
+			                	<option>04</option>
+			                	<option>05</option>
+			                	<option>06</option>
+			                	<option>07</option>
+			                	<option>08</option>
+			                	<option>09</option>
+			                	<option>10</option>
+			                	<option>11</option>
+			                	<option>12</option>
+			                	<option>13</option>
+			                	<option>14</option>
+			                	<option>15</option>
+			                	<option>16</option>
+			                	<option>17</option>
+			                	<option>18</option>
+			                	<option>19</option>
+			                	<option>20</option>
+			                	<option>21</option>
+			                	<option>22</option>
+			                	<option>23</option>
+			                	<option>24</option>
+			                	<option>25</option>
+			                	<option>26</option>
+			                	<option>27</option>
+			                	<option>28</option>
+			                	<option>29</option>
+			                	<option>30</option>
+			                	<option>31</option>
+			                </select>
+			        <div class="forms-desc">Day</div>
+			            </li>
+			            <li>
+			                <select name="begin_month">
+			                	<option selected="selected">--<option>
+			                	<option>Janvier</option>
+			                	<option>Fevrier</option>
+			                	<option>Mars</option>
+			                	<option>Avril</option>
+			                	<option>Mai</option>
+			                	<option>Juin</option>
+			                	<option>Juillet</option>
+			                	<option>Aout</option>
+			                	<option>Septembre</option>
+			                	<option>Octobre</option>
+			                	<option>Novembre</option>
+			                	<option>Decembre</option>
+			                </select>
+			        <div class="forms-desc">Month</div>
+			            </li>
+			            <li>
+			                <select name="begin_year">
+			                	<option selected="selected">----<option>
+			                	<option>1990</option>
+			                	<option>1991</option>
+			                	<option>1992</option>
+			                	<option>1993</option>
+			                	<option>1994</option>
+			                	<option>1995</option>
+			                	<option>1996</option>
+			                	<option>1997</option>
+			                	<option>1998</option>
+			                	<option>1999</option>
+			                	<option>2000</option>
+			                	<option>2001</option>
+			                	<option>2002</option>
+			                	<option>2003</option>
+			                	<option>2004</option>
+			                	<option>2005</option>
+			                	<option>2006</option>
+			                	<option>2007</option>
+			                	<option>2008</option>
+			                	<option>2009</option>
+			                	<option>2010</option>
+			                	<option>2011</option>
+			                	<option>2012</option>
+			                	<option>2013</option>
+			                	<option>2014</option>
+			                	<option>2015</option>
+			                </select>
+			                <div class="forms-desc">Year</div>
+			            </li>
+			        </ul>
+			</label>
+			 <label>
+       			 	<li>Date fin du projet</li>
+			        <ul class="forms-inline-list">
+			            <li>
+			                <select name="end_day">
+			                	<option selected="selected">--<option>
+			                	<option>01</option>
+			                	<option>02</option>
+			                	<option>03</option>
+			                	<option>04</option>
+			                	<option>05</option>
+			                	<option>06</option>
+			                	<option>07</option>
+			                	<option>08</option>
+			                	<option>09</option>
+			                	<option>10</option>
+			                	<option>11</option>
+			                	<option>12</option>
+			                	<option>13</option>
+			                	<option>14</option>
+			                	<option>15</option>
+			                	<option>16</option>
+			                	<option>17</option>
+			                	<option>18</option>
+			                	<option>19</option>
+			                	<option>20</option>
+			                	<option>21</option>
+			                	<option>22</option>
+			                	<option>23</option>
+			                	<option>24</option>
+			                	<option>25</option>
+			                	<option>26</option>
+			                	<option>27</option>
+			                	<option>28</option>
+			                	<option>29</option>
+			                	<option>30</option>
+			                	<option>31</option>
+			                </select>
+			                <div class="forms-desc">Day</div>
+			            </li>
+			            <li>
+			                <select name="end_month">
+			                	<option selected="selected">--<option>
+			                	<option>Janvier</option>
+			                	<option>Fevrier</option>
+			                	<option>Mars</option>
+			                	<option>Avril</option>
+			                	<option>Mai</option>
+			                	<option>Juin</option>
+			                	<option>Juillet</option>
+			                	<option>Aout</option>
+			                	<option>Septembre</option>
+			                	<option>Octobre</option>
+			                	<option>Novembre</option>
+			                	<option>Decembre</option>
+			                </select>
+			                <div class="forms-desc">Month</div>
+			            </li>
+			            <li>
+			                <select name="end_year">
+			                	<option selected="selected">----<option>
+			                	<option>1990</option>
+			                	<option>1991</option>
+			                	<option>1992</option>
+			                	<option>1993</option>
+			                	<option>1994</option>
+			                	<option>1995</option>
+			                	<option>1996</option>
+			                	<option>1997</option>
+			                	<option>1998</option>
+			                	<option>1999</option>
+			                	<option>2000</option>
+			                	<option>2001</option>
+			                	<option>2002</option>
+			                	<option>2003</option>
+			                	<option>2004</option>
+			                	<option>2005</option>
+			                	<option>2006</option>
+			                	<option>2007</option>
+			                	<option>2008</option>
+			                	<option>2009</option>
+			                	<option>2010</option>
+			                	<option>2011</option>
+			                	<option>2012</option>
+			                	<option>2013</option>
+			                	<option>2014</option>
+			                	<option>2015</option>
+			                </select>
+			                <div class="forms-desc">Year</div>
+			            </li>
+			        </ul>
+			</label>
+    		<p>
+       		 	<input class="btn-green width-50" type="submit" value="Rechercher"/>
+    		</p>
+		</form>
+	</table>	
+	</div>
+	<a href="AccueilManager.html">Retour à l'accueil</a>
+	<!--
+	<div class="units-row">
+		<h1> Insertion d'un projet</h1>
+		<form method="post" action="" class="forms">
+		   	<label>
+        		<input type="text" name="projetct-name" placeholder="Nom de projet" class="width-50" />
+    		</label>
+    		<label>
+       			 Date debut du projet
+			        <ul class="forms-inline-list">
+			            <li>
+			                <select>
+			                	<option>01</option>
+			                	<option>02</option>
+			                	<option>03</option>
+			                	<option>04</option>
+			                	<option>05</option>
+			                	<option>06</option>
+			                	<option>07</option>
+			                	<option>08</option>
+			                	<option>09</option>
+			                	<option>10</option>
+			                	<option>11</option>
+			                	<option>12</option>
+			                	<option>13</option>
+			                	<option>14</option>
+			                	<option>15</option>
+			                	<option>16</option>
+			                	<option>17</option>
+			                	<option>18</option>
+			                	<option>19</option>
+			                	<option>20</option>
+			                	<option>21</option>
+			                	<option>22</option>
+			                	<option>23</option>
+			                	<option>24</option>
+			                	<option>25</option>
+			                	<option>26</option>
+			                	<option>27</option>
+			                	<option>28</option>
+			                	<option>29</option>
+			                	<option>30</option>
+			                	<option>31</option>
+			                </select>
+			                <div class="forms-desc">Day</div>
+			            </li>
+			            <li>
+			                <select>
+			                	<option>Janvier</option>
+			                	<option>Fevrier</option>
+			                	<option>Mars</option>
+			                	<option>Avril</option>
+			                	<option>Mai</option>
+			                	<option>Juin</option>
+			                	<option>Juillet</option>
+			                	<option>Aout</option>
+			                	<option>Septembre</option>
+			                	<option>Octobre</option>
+			                	<option>Novembre</option>
+			                	<option>Decembre</option>
+			                </select>
+			                <div class="forms-desc">Month</div>
+			            </li>
+			            <li>
+			                <select>
+			                	<option>1990</option>
+			                	<option>1991</option>
+			                	<option>1992</option>
+			                	<option>1993</option>
+			                	<option>1994</option>
+			                	<option>1995</option>
+			                	<option>1996</option>
+			                	<option>1997</option>
+			                	<option>1998</option>
+			                	<option>1999</option>
+			                	<option>2000</option>
+			                	<option>2001</option>
+			                	<option>2002</option>
+			                	<option>2003</option>
+			                	<option>2004</option>
+			                	<option>2005</option>
+			                	<option>2006</option>
+			                	<option>2007</option>
+			                	<option>2008</option>
+			                	<option>2009</option>
+			                	<option>2010</option>
+			                	<option>2011</option>
+			                	<option>2012</option>
+			                	<option>2013</option>
+			                	<option>2014</option>
+			                	<option>2015</option>
+			                </select>
+			                <div class="forms-desc">Year</div>
+			            </li>
+			        </ul>
+			</label>
+			<label>
+       			 Date fin du projet
+			        <ul class="forms-inline-list">
+			            <li>
+			                <select>
+			                	<option>01</option>
+			                	<option>02</option>
+			                	<option>03</option>
+			                	<option>04</option>
+			                	<option>05</option>
+			                	<option>06</option>
+			                	<option>07</option>
+			                	<option>08</option>
+			                	<option>09</option>
+			                	<option>10</option>
+			                	<option>11</option>
+			                	<option>12</option>
+			                	<option>13</option>
+			                	<option>14</option>
+			                	<option>15</option>
+			                	<option>16</option>
+			                	<option>17</option>
+			                	<option>18</option>
+			                	<option>19</option>
+			                	<option>20</option>
+			                	<option>21</option>
+			                	<option>22</option>
+			                	<option>23</option>
+			                	<option>24</option>
+			                	<option>25</option>
+			                	<option>26</option>
+			                	<option>27</option>
+			                	<option>28</option>
+			                	<option>29</option>
+			                	<option>30</option>
+			                	<option>31</option>
+			                </select>
+			                <div class="forms-desc">Day</div>
+			            </li>
+			            <li>
+			                <select>
+			                	<option>Janvier</option>
+			                	<option>Fevrier</option>
+			                	<option>Mars</option>
+			                	<option>Avril</option>
+			                	<option>Mai</option>
+			                	<option>Juin</option>
+			                	<option>Juillet</option>
+			                	<option>Aout</option>
+			                	<option>Septembre</option>
+			                	<option>Octobre</option>
+			                	<option>Novembre</option>
+			                	<option>Decembre</option>
+			                </select>
+			                <div class="forms-desc">Month</div>
+			            </li>
+			            <li>
+			                <select>
+			                	<option>1990</option>
+			                	<option>1991</option>
+			                	<option>1992</option>
+			                	<option>1993</option>
+			                	<option>1994</option>
+			                	<option>1995</option>
+			                	<option>1996</option>
+			                	<option>1997</option>
+			                	<option>1998</option>
+			                	<option>1999</option>
+			                	<option>2000</option>
+			                	<option>2001</option>
+			                	<option>2002</option>
+			                	<option>2003</option>
+			                	<option>2004</option>
+			                	<option>2005</option>
+			                	<option>2006</option>
+			                	<option>2007</option>
+			                	<option>2008</option>
+			                	<option>2009</option>
+			                	<option>2010</option>
+			                	<option>2011</option>
+			                	<option>2012</option>
+			                	<option>2013</option>
+			                	<option>2014</option>
+			                	<option>2015</option>
+			                </select>
+			                <div class="forms-desc">Year</div>
+			            </li>
+			        </ul>
+			</label>
+			<p>
+       		 	<input class="btn-green width-50" type="submit" value="Insérer"/>
+    		</p>
+		</form>
+	</div>
+	-->
+	
+</body>
+</html>

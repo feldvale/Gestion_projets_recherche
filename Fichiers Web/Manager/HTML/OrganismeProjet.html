@@ -1,0 +1,52 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Organisme Projet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+<body>
+	
+	<h1>Organismes Projet</h1><br>
+	<p><h2>Ajouter (la date de creation et la date de fin sont obligatoires!) </h2>
+	<form method="post" action="../PHP/organisme-call-insert.php" class="forms">
+		<label><input type="text" name="Nom" placeholder="nom de l'organisme"/></label>
+		<label><input type="text" name="DatedeCréation" placeholder="Date de creation"/></label>
+		<label><input type="text" name="Datedefin" placeholder="Date de fin"/></label> 
+		<input class="btn-blue width-50" type="submit" value="Ajouter"/></br>
+	</form></p>
+	
+	<p><h2>Afficher</h2>
+	<form method="post" action="../PHP/organisme-call-list.php" class="forms">
+		<label><input type="text" name="filtreNom" placeholder="Thème"/></label>
+		<label><input type="text" name="filtreDateC" placeholder="Date de Creation"/></label>
+		<label><input type="text" name="filtreDateF" placeholder="Date de fin"/></label>
+		<input class="btn-blue width-50" type="submit" value="Filtrer"/></br>
+	</form></p>
+
+	<br>
+	<br>
+	<h1>Comites</h1><br>
+		<p><h2>Ajouter (l'identifiant est obligatoire!) </h2>
+	<form method="post" action="../PHP/comite-call-insert.php" class="forms">
+		<label><input type="text" name="id" placeholder="id du comite"/></label>
+		<label><input type="text" name="nom" placeholder="nom du comite"/></label>
+		<label><input type="text" name="nomOrga" placeholder="nom de l'organisme projet"/></label> 
+		<label><input type="text" name="dateOrga" placeholder="date de creation de l'organisme projet"/></label> 
+		<input class="btn-blue width-50" type="submit" value="Ajouter"/></br>
+	</form></p>
+	
+	<p><h2>Afficher</h2>
+	<form method="post" action="../PHP/comit-call-liste.php" class="forms">
+		<label><input type="text" name="filtreId" placeholder="id du comite"/></label>
+		<label><input type="text" name="filtreNom" placeholder="nom du comite"/></label>
+		<label><input type="text" name="filtreNomOrga" placeholder="nom de l'organisme projet"/></label>
+		<label><input type="text" name="filtreDateOrga" placeholder="date de creation de l'organisme projet"/></label> 
+		<input class="btn-blue width-50" type="submit" value="Filtrer"/></br>
+	</form></p>
+	
+	<p><a href="AccueilManager.html">Retour</a></p>
+		
+	
+</body>
+</html>

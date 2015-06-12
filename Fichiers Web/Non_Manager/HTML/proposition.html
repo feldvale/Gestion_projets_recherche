@@ -1,0 +1,32 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+	Rechercher des propostions déjà soumises</br>
+	
+	<form method="post" action="../PHP/proposition-list.php">
+		<input type="text" name="recherche"/></br>
+		<select name="type_recherche" size="1"></br>
+			<option value="nom_prop">Recherche par nom</option>
+			<option value="periode">Recherche par période</option>
+			<option value="appel">Recherche par appel d'offres</option>
+			<option value="organisme">Recherche par organisme</option>
+		<input type="submit" value="Rechercher"/></br>
+	</form>
+
+	<br/>
+	Insérer une nouvelle proposition
+	<br/>
+	<form method="post" action="../PHP/proposition-insertion.php">
+		<label><input type="text" name="comite" placeholder="Nom du comité" /></label><br/>
+		<label>Sujet</label>:<input type="text" name="sujet"/><br/>
+		<label>Description</label>:</br><TEXTAREA name="description" rows=3 cols=50>Description du projet</TEXTAREA>
+		<input type="submit" value="Insérer"/></br>
+	</form>
+	<br/>
+	<br/>
+	<a href="accueil.html" >Retour à l'accueil</a>
+	
+</body>
+</html>
