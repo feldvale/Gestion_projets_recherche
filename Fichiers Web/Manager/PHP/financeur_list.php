@@ -22,7 +22,7 @@
 	
 	$vNom=$_POST['filtreNom'];
 	$vDateC=$_POST['filtreDateD'];
-	$vDateF=$_POST['filtredateF'];
+	$vDateF=$_POST['filtreDateF'];
 	$vEmpC=$_POST['filtreemployeC'];
 	$vType=$_POST['filtretype'];
 
@@ -35,12 +35,12 @@
 	
 	
 	if(!empty($vDateC))	
-		$vCondFin = "dateDebut = '$vDateC' AND ";
+		$vCondFin = "dateDebut = 'to_date('$vDateC','dd-mm-yyyy')' AND ";
 	else
 		$vCondFin = "";
 
 	if(!empty($vDateF))	
-		$vCondOrga = "dateFin = '$vDateF' AND ";
+		$vCondOrga = "dateFin = 'to_date('$vDateF','dd-mm-yyyy')'  AND ";
 	else
 		$vCondOrga = "";
 	
@@ -63,16 +63,16 @@
 	while($vResult=pg_fetch_array($vQuery)){
 		echo"<tr>";
 		echo"<td>$vResult[nom]</td>";
-		echo"<td>$vResult[dateDebut]</td>";
-		echo"<td>$vResult[dateFin]</td>";
-		echo"<td>$vResult[employeContact]</td>";
+		echo"<td>$vResult[datedebut]</td>";
+		echo"<td>$vResult[datefin]</td>";
+		echo"<td>$vResult[employecontact]</td>";
 		echo"<td>$vResult[type]</td>";
 		echo"</tr>";
 	}
 ?>
 	</table></p>
 	<hr/>
-	<a href="../HTML/financeur.html">Retour à la section financeurs</a>
+	<a href="../HTML/OrganismeProjet.html">Retour à la section financeurs</a>
 	<p><a href="../HTML/AccueilManager.html">Retour à l'accueil</a></p>
 </body>
 </html>

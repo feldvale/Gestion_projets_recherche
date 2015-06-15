@@ -48,7 +48,7 @@
 ?>
 
 	<br/>
-	<p><a href="../HTML/OrganismeProjet.html">Inserer un nouvel appel à projet</a></p>
+	<p><a href="../HTML/OrganismeProjet.html">Inserer un nouvel organisme projet</a></p>
 	<p><a href="../HTML/AccueilManager.html">Retour à l'accueil</a></p>
 </body>
 </html>

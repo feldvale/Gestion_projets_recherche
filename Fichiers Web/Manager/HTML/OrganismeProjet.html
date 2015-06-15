@@ -44,6 +44,50 @@
 		<label><input type="text" name="filtreDateOrga" placeholder="date de creation de l'organisme projet"/></label> 
 		<input class="btn-blue width-50" type="submit" value="Filtrer"/></br>
 	</form></p>
+	<br>
+	<br>
+	
+	<h1>Labos externes</h1><br>
+	<h2>Insérer des laboratoires externes</h2> <br><br>
+	<p><b>Attention :</b> la date de fin doit etre ulterieure a celle de debut</p>
+	
+	<p><form method="post" action="../PHP/laboratoirExt_insertion.php" class="forms">
+		<label><input type="text" name="nom" placeholder="Nom du financeur"/></label>
+		<label><input type="text" name="dateDebut" placeholder="Date de Début (jj-mm-aaaa)"/></label>
+		<label><input type="text" name="dateFin" placeholder="Date de fin (jj-mm-aaaa)"/></label> 
+		<input class="btn-blue width-50" type="submit" value="Ajouter"/></br>
+	</form></p>
+	
+	<p><h2>Afficher Les Labos existants</h2>
+	<form method="post" action="../PHP/laboratoirExt_list.php" class="forms">
+		<label><input type="text" name="filtreNom" placeholder="Nom du financeur"/></label>
+		<label><input type="text" name="filtreDateD" placeholder="Date de Debut (jj-mm-aaaa)"/></label>
+		<label><input type="text" name="filtreDateF" placeholder="Date de fin (jj-mm-aaaa)"/></label>
+		<input class="btn-blue width-50" type="submit" value="Filtrer"/></br>
+	</form></p>
+	<br>
+	<br>
+		<h1>Financeurs</h1><br>
+		<p><h2>Insérer des financeurs</h2>
+	<p><form method="post" action="../PHP/financeur_insertion.php" class="forms">
+		<label><input type="text" name="nom" placeholder="Nom du financeur"/></label>
+		<label><input type="text" name="dateDebut" placeholder="Date de Début (jj-mm-aaaa)"/></label>
+		<label><input type="text" name="dateFin" placeholder="Date de fin (jj-mm-aaaa)"/></label> 
+		<label><input type="text" name="employeContact" placeholder="Mail de l'employe contact"/></label> 
+		<label><input type="text" name="type" placeholder="Type de financeur (E, P, R, V ou O)"/></label> 
+		<input class="btn-blue width-50" type="submit" value="Ajouter"/></br>
+	</form></p>
+	
+	<h2>Afficher les financeurs</h2><br><br>
+	<p><b>Attention :</b> la date de fin doit etre ulterieure a celle de debut</p>
+	<p><form method="post" action="../PHP/financeur_list.php" class="forms">
+		<label><input type="text" name="filtreNom" placeholder="Nom du financeur"/></label>
+		<label><input type="text" name="filtreDateD" placeholder="Date de Debut (jj-mm-aaaa)"/></label>
+		<label><input type="text" name="filtreDateF" placeholder="Date de fin (jj-mm-aaaa)"/></label>
+		<label><input type="text" name="filtreemployeC" placeholder="Mail de l'employe contact"/></label>
+		<label><input type="text" name="filtretype" placeholder="Type de financeur (E, P, R, V ou O)"/></label>
+		<input class="btn-blue width-50" type="submit" value="Filtrer"/></br>
+	</form></p>
 	
 	<p><a href="AccueilManager.html">Retour</a></p>
 		

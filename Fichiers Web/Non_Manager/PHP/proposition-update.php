@@ -1,7 +1,6 @@
 <html>
 <head>
-	<meta charset "UTF-8">
-	<LINK REL="stylesheet" HREF="../../css/calendrier.css" type="text/css">
+	<LINK REL="stylesheet" HREF="calendrier.css" type="text/css">
 	<script type="text/javascript">
   
 	var timer = null;
@@ -337,7 +336,7 @@ function calendrier(year, month, day){
 }
   
 function CreateDayCalandar(){
-     list
+     
     // On récupère le premier jour de la semaine du mois
     var dateTemp = new Date(current_year, current_month,1);
      
@@ -543,37 +542,43 @@ catch(error){
   
 window.onload = init_evenement;
 </script>
-</head>
-<body>
+</head>	
+	<body>
 	<?php
 		include "../../php/commonfunctions.php";
 		include "../../php/global.php";
 		include "../../php/connect.php";
-
 		$connect = fConnect();
 
-		$proposition = $_POST["menuChoixProposition"];
+		if(isset($_POST["menuChoixProposition"	]))
+		{
+			$proposition = $_POST["menuChoixProposition"];
 		
 		
-		$query = "SELECT numero FROM proposition WHERE numero = '$proposition'";
-		$result = pg_query($connect, $query);
-		$row = pg_fetch_array($result, PGSQL_NUM);
+			$query = "SELECT numero FROM proposition WHERE numero = '$proposition'";
+			$result = pg_query($connect, $query);
+			$row = pg_fetch_array($result, NULL, PGSQL_NUM);
 
-		echo "<FORM METHOD='POST' ACTION='proposition-update2.php'>";
-		echo"<TABLE border='1'>";
-		echo"<TR>";
-		echo"<TD>N°</TD>	<TD>Sujet</TD>	<TD>Date d'envoi</TD>	<TD>Date de reponse</TD>	<TD>Budget</TD>";
-		echo"</TR>";
-		echo"<TR>";
-		echo"<TD><input type='text' name='new_num' placeholder = '$row[0]'/><TD><input type='text' name='new_sujet'/></TD>	<TD><input type='text' name='new_DateEnvoi' id='' class='calendrier' size='8' /></TD>	
-		<TD><input type='text' name='new_DateRep' id='' class='calendrier' size='8' /></TD>	<TD><input type='text' name='new_Budget'/></TD>";
-		echo"</TR>";
-		echo"<input type='submit' name='Modifier'/>";
-		
+			echo"<FORM METHOD='POST' ACTION='proposition-update2.php'>";
+			echo"<TABLE border='1'>";
+			echo"<TR>";
+			echo"<TD>N°</TD>	<TD>Sujet</TD>	<TD>Date d'envoi</TD>	<TD>Date de reponse</TD>	<TD>Budget</TD>";
+			echo"</TR>";
+			echo"<TR>";
+			echo"<TD><input type='text' name='new_num' value = '$row[0]'/><TD><input type='text' name='new_sujet'/></TD>				<TD><input type='text' name='new_DateEnvoi' id='' class='calendrier' size='8' /></TD>				<TD><input type='text' name='new_DateRep' id='' class='calendrier' size='8' /></TD>	<TD><input type='text' name='new_Budget'/></TD>";
+			echo"</TR>";
+			echo"</TABLE>";
+			echo"<input type='submit' name='Modifier'/>";
+		}
+		else
+		{
+			echo '<body onLoad="alert(\'Erreur. Retour au menu Proposition\')">';
+			echo '<meta http-equiv="refresh" content="0; URL=../HTML/proposition.html">';
+		}
 		echo "</br>";
 		echo "</br>";
 	
 	?>
 	<p><a href="../HTML/accueil.html">Retour à l'accueil</a></p>
 </body>
-</head>
+</html>

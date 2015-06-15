@@ -33,11 +33,11 @@
 			
 			if($result != FALSE)
 			{
-				echo "Insere reussi";
+				echo "Insertion reussie";
 			}
 			else
 			{
-				echo "Insere echoue";
+				echo "Insertion echoue";
 			}
 			
 		}

@@ -127,10 +127,10 @@ ORDER BY F.nom;";
 		echo"<td>$vResult[app_descr]</td>";
 		echo"<td>$vResult[envoie]</td>";
 		echo"<td>$vResult[date_reponse]</td>";
-		if($vResult['etat'])
+		if($vResult['etat'] == 't')
 			echo"<td>Validé</td>";
 		else
-			echo"<td>Rejeté</td>";
+			echo"<td>Non Validé</td>";
 		echo"<td>$vResult[prop_descr]</td>";
 		echo"<td>$vResult[proj_debut]</td>";
 		echo"<td>$vResult[proj_fin]</td>";

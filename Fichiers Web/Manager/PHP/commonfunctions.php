@@ -308,7 +308,7 @@ Class commonfunctions
     								<div id="<?php echo "update1".$count;?>" class="btn-green">   Update</div>
     							</div>
     							<div id="<?php echo "update_panel".$count;?>" class="panel">
-										 <div class="update_depense">
+										<div class="update_depense">
 	  										<label class="btn">Ajoute_Membre</label>
 									   </div>
 									   <div class="panel1">

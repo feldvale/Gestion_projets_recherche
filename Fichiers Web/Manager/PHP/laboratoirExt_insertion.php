@@ -22,7 +22,7 @@
 
 	else {
 
-		$vSql = "SELECT dateFin FROM LaboratoireExterne WHERE dateDebut = '$vDateC' AND nom= '$vNom';";
+		$vSql = "SELECT dateFin FROM LaboratoireExterne WHERE dateDebut = to_date('$vDateC','dd-mm-yyyy') AND nom= '$vNom';";
 		$vQuery=pg_query($vConn,$vSql);
 
 		if(!(pg_num_rows($vQuery) == 0))
@@ -32,7 +32,7 @@
 	
 			//<!-- Insertion de l appel dans la BDD
 			$vSql = "INSERT INTO LaboratoireExterne (id, nom, dateDebut, dateFin)
-		 		VALUES ('nextval('seqLaboExterne')','$vNom', '$vDateC', '$vDateF','$vEmpC', '$vType')";
+		 		VALUES (nextval('seqLaboExterne'),'$vNom', to_date('$vDateC','dd-mm-yyyy'), to_date('$vDateF','dd-mm-yyyy'))";
 			$vQuery=pg_query($vConn,$vSql);
 	
 	
@@ -48,7 +48,7 @@
 ?>
 
 	<br/>
-	<p><a href="../HTML/LaboratoirExt.html">Inserer un nouveau financeur</a></p>
+	<p><a href="../HTML/OrganismeProjet.html">Inserer un nouvel organisme</a></p>
 	<p><a href="../HTML/AccueilManager.html">Retour à l'accueil</a></p>
 </body>
 </html>

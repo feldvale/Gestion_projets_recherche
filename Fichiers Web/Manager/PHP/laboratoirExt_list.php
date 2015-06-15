@@ -20,7 +20,7 @@
 	
 	$vNom=$_POST['filtreNom'];
 	$vDateC=$_POST['filtreDateD'];
-	$vDateF=$_POST['filtredateF'];
+	$vDateF=$_POST['filtreDateF'];
 
 	
 	if(!empty($vNom))	
@@ -30,17 +30,17 @@
 	
 	
 	if(!empty($vDateC))	
-		$vCondFin = "dateDebut = '$vDateC' AND ";
+		$vCondFin = "dateDebut = 'to_date('$vDateC','dd-mm-yyyy')'  AND ";
 	else
 		$vCondFin = "";
 
 	if(!empty($vDateF))	
-		$vCondOrga = "dateFin = '$vDateF' AND ";
+		$vCondOrga = "dateFin = 'to_date('$vDateF','dd-mm-yyyy')'  AND ";
 	else
 		$vCondOrga = "";
 
 
-	$vSql = "SELECT * FROM Financeur f WHERE $vCondTheme $vCondLancement $vCondFin 1=1";
+	$vSql = "SELECT * FROM LaboratoireExterne f WHERE $vCondLancement $vCondFin $vCondOrga 1=1";
 	
 	$vQuery=pg_query($vConn, $vSql);
 
@@ -48,14 +48,14 @@
 	while($vResult=pg_fetch_array($vQuery)){
 		echo"<tr>";
 		echo"<td>$vResult[nom]</td>";
-		echo"<td>$vResult[dateDebut]</td>";
-		echo"<td>$vResult[dateFin]</td>";
+		echo"<td>$vResult[datedebut]</td>";
+		echo"<td>$vResult[datefin]</td>";
 		echo"</tr>";
 	}
 ?>
 	</table></p>
 	<hr/>
-	<a href="../HTML/LaboratoireExt.html">Retour à la section laboratoire externe</a>
+	<a href="../HTML/OrganismeProjet.html">Retour </a>
 	<p><a href="../HTML/AccueilManager.html">Retour à l'accueil</a></p>
 </body>
 </html>
